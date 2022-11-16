@@ -1,4 +1,5 @@
 import "../src/style.css";
+import "../src/image-popup";
 
 const darkModeToggle = document.getElementById("color_mode");
 darkModeToggle?.addEventListener("click", () => {
