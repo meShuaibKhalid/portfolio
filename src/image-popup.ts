@@ -1,4 +1,4 @@
-import "../src/style.css";
+import "../src/style.css"; 
 
 const images: HTMLCollectionOf<HTMLImageElement> = document.getElementsByTagName('img');
 for (let image of Array.from(images)) {
