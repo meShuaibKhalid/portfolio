@@ -1,0 +1,147 @@
+<!-- home page for my personal portfolio -->
+<app-nav></app-nav>
+
+<section class="home">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+      <div>
+        <div class="max-w-lg md:max-w-none">
+          <h1 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+            Hi! I'm Shoaib Khalid
+          </h1>
+
+          <p class="mt-4 text-gray-700">
+            I'm a software engineer specializing in web technologies, primarily
+            working with the MEAN and MERN stacks. My focus is on building
+            scalable, efficient applications using JavaScript and TypeScript. I
+            enjoy working across the full stack, solving real-world problems
+            with clean and maintainable code. Always exploring better ways to
+            optimize and streamline workflows.
+          </p>
+
+          <p>
+            <a
+              class="mt-5 inline-block rounded-sm border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-gray-900 hover:cursor-pointer focus:ring-3 focus:outline-hidden"
+              href="#projects"
+            >
+              View My Work
+          </a>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <img src="/self_ghibli_portrait.png" class="rounded" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <h1 class="text-2xl text-center font-semibold text-gray-900 sm:text-3xl">
+    Personal Information
+  </h1>
+
+  <div class="w-[50%] mx-auto mt-10">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y-2 divide-gray-200">
+        <tbody class="divide-y divide-gray-200">
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Name</td>
+            <td class="px-3 py-2 whitespace-nowrap">Muhammad Shoaib Khalid</td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Origin</td>
+            <td class="px-3 py-2 whitespace-nowrap">Pakistan</td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Phone</td>
+            <td class="px-3 py-2 whitespace-nowrap">
+              <a class="underline" href="tel:+923046212929">+92 304 6212929</a>
+            </td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Email</td>
+            <td class="px-3 py-2 whitespace-nowrap">
+              {{ "khalidshuaib07@gmail.com" }}
+            </td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Current Role</td>
+            <td class="px-3 py-2 whitespace-nowrap">FullStack Developer</td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Experience</td>
+            <td class="px-3 py-2 whitespace-nowrap">5+ years</td>
+          </tr>
+
+          <tr class="*:text-gray-900 *:first:font-bold">
+            <td class="px-3 py-2 whitespace-nowrap">Qualification</td>
+            <td class="px-3 py-2 whitespace-nowrap">
+              Bachelors in Information Technology
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-100 my-10 py-10" id="tech-stack">
+  <h1 class="text-2xl text-center font-semibold text-gray-900 sm:text-3xl">
+    Tech Stack
+  </h1>
+
+  <!-- <div class="flex w-[70%] mx-auto flex-wrap items-center justify-center mt-5">
+    @for (item of TECHNOLOGIES; track $index) {
+    <div
+      class="flex mx-2 rounded-full bg-white border-gray-300 border items-center justify-center my-5 py-2 px-5"
+    >
+      <img
+        src="{{ item.logo }}"
+        alt="{{ item.name }}"
+        class="h-10 w-10 rounded-full p-2 border-gray-900"
+      />
+      <span class="ml-3 text-lg font-semibold text-gray-900">
+        {{ item.name }}
+      </span>
+    </div>
+    }
+  </div> -->
+  <div class="w-[80%] mx-auto mt-5">
+    @for (techCategory of TECHNOLOGIES; track $index) {
+    <div class="my-5">
+      <h2 style="width: fit-content;" class="text-2xl w-full font-bold text-white p-2 bg-gray-900 border border-gray-300 px-10 rounded-full mb-5 hover: cursor-pointer">
+        {{ techCategory.category }}
+      </h2>
+      <div class="flex flex-wrap items-center justify-center">
+        @for (item of techCategory.items; track $index) {
+        <div
+          class="flex mx-2 rounded-full bg-white border border-gray-300 items-center justify-center my-2 px-4
+          hover: cursor-pointer hover:scale-[1.1] transition-all duration-300 ease-in-out"
+        >
+          <img
+            [src]="item.logo"
+            [alt]="item.name"
+            class="h-10 w-10 rounded-full p-2 border-gray-900"
+          />
+          <span class="ml-3 text-sm font-semibold text-gray-900">{{
+            item.name
+          }}</span>
+        </div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+
+</section>
+
+<section id="projects">
+  <app-projects></app-projects>
+</section>
